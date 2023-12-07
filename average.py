@@ -29,10 +29,7 @@ def get_movie_name_by_id(mycursor,movie_id):
     query="SELECT movie_name from movie WHERE id= %s"
     mycursor.execute(query,(movie_id,))
     movie_name = mycursor.fetchone()
-    if movie_name is not None:
-        return movie_name[0]
-    else:
-        return None
+    return movie_name
     
 def main_function():
 
