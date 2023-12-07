@@ -34,15 +34,14 @@ def get_movie_name_by_id(mycursor,movie_id):
 def main_function():
 
     try:
-        # Calculate average visitor count
+        
         avg_visitor_count = average_visitor_count(mycursor)
 
-        # Get movies with visitor count greater than the average
         movies_above_avg = get_movies_above_avg(mycursor, avg_visitor_count)
 
         for movie_id in movies_above_avg:
             movie_name = get_movie_name_by_id(mycursor,movie_id[0])
-              # Print the result
+            # Print the result
             print(f"Movies with visitor count > {avg_visitor_count}: {movie_name}")
 
     except Exception as e:
